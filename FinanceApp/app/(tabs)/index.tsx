@@ -1,3 +1,4 @@
+import { MaterialIcons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import { Alert, Button, Text, TextInput, View } from "react-native";
@@ -132,6 +133,7 @@ export default function Home() {
         />
       </View>
       <SwipeListView
+        style={{ marginTop: 20 }}
         data={transactions}
         keyExtractor={(_, index) => index.toString()}
         renderItem={({ item }) => {
@@ -186,12 +188,13 @@ export default function Home() {
                 style={{ color: "white", fontWeight: "bold" }}
                 onPress={() => deleteTransaction(index)}
               >
-                Delete
+                <MaterialIcons name="delete" size={12} color="white" />
+                <Text style={{ color: "white", fontSize: 12 }}>Delete</Text>
               </Text>
             </View>
           </View>
         )}
-        rightOpenValue={-75}
+        rightOpenValue={-80}
       />
     </View>
   );
