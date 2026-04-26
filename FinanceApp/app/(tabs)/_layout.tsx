@@ -26,15 +26,18 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: "Explore",
-          tabBarIcon: ({ color }) => (
-            <IconSymbol size={28} name="paperplane.fill" color={color} />
-          ),
-        }}
-      />
+      <Tabs.Screen name="income" options={{ title: "Income" }} />
+      <Tabs.Screen name="expense" options={{ title: "Expense" }} />
     </Tabs>
   );
 }
+
+// import { FinanceProvider } from "../../context/FinanceContext";
+
+// export default function RootLayout() {
+//   return (
+//     <FinanceProvider>
+//       {/* tabs atau stack kamu */}
+//     </FinanceProvider>
+//   );
+// }
